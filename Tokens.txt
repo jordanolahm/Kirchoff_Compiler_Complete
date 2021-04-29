@@ -1,0 +1,30 @@
+
+
+
+<CIRCDEF,> 
+
+<DECLARATION,> 
+<[,> 
+<NDECLARATION,0> <,,> <NDECLARATION,1> <,,> <NDECLARATION,2> <,,> <NDECLARATION,3> <;,> 
+<CDECLARATION,0> <,,> <CDECLARATION,1> <,,> <CDECLARATION,2> <,,> <CDECLARATION,3> <,,> <CDECLARATION,4> <;,> 
+<],> 
+
+<DECLARATION,> 
+<[,> 
+<NDECLARATION,4> <,,> <NDECLARATION,5> <,,> <NDECLARATION,6> <,,> <NDECLARATION,7> <;,> 
+<CDECLARATION,5> <,,> <CDECLARATION,6> <,,> <CDECLARATION,7> <,,> <CDECLARATION,8> <;,> 
+<],> 
+
+
+<OUTDEF,> 
+<[,> 
+<PLOT,> <(,> <STRING,saida.png> <,,> <(,> <NVAR,1> <&,> <NVAR,2> <),> <,,> <NUM,0.01> <,,> <NUM,0.00> <,,> <NUM,10.00> <),> <;,> 
+<IF,> <(,> <(,> <(,> <(,> <NVAR,1> <&,> <NVAR,2> <),> <+,> <(,> <_,> <NCMP,0> <),> <),> <>,> <(,> <#,> <NCMP,0> <),> <),> <),> 
+<[,> 
+<LIST,> <(,> <STRING,saida.txt> <,,> <(,> <NVAR,1> <&,> <NVAR,2> <),> <,,> <NUM,0.01> <,,> <NUM,0.00> <,,> <NUM,10.00> <),> <;,> 
+<],> 
+<AMPLITUDE,6> <:=,> <NUM,0.01> <;,> 
+
+<:=,> <CPT,> <;,> 
+<NNAMEB,1> <:=,> <STRING,b> <;,> 
+<],> 

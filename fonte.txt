@@ -1,0 +1,30 @@
+$isto e um comentario
+e esta e a continuacao do comentario$
+
+$comentario$ CIRCDEF
+
+circuitoa
+[
+	gnd, a, b, c;
+	(RST, rsta, a, b, 1000.00), (RST, rstb, b, c, 2000.00), (RST, rstc, c, gnd, 100.00), (CSR, csra, gnd, a, SIN, 10.00, 00), (RST, rstd, a, b, 1000.00);
+]
+
+circuitob
+[
+	gnd, a, b, c;
+	(CPT, cpta, a, b, 0.0001, 0), (IDT, idta, b, c, 0.10, 0), (RST, rsta, c, gnd, 500.00), (VSR, vsra, gnd, a, SIN, 110.0, 60.5);
+]
+
+
+OUTDEF
+[
+	PLOT("saida.png", (circuitoa.a & circuitoa.b), 0.01, 0.00, 10.00);
+	IF((((circuitoa.a & circuitoa.b) + (_circuitoa.rsta)) > (#circuitoa.rsta)))
+	[
+		LIST("saida.txt", (circuitoa.a & circuitoa.b), 0.01, 0.00, 10.00);
+	]
+	circuitob.idta.AMPLITUDE := 0.01;
+
+	circuitoa.rstx.CTYPE := CPT;
+	circuitoa.rstb.NNAMEB := "b";
+]

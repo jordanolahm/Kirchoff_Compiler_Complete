@@ -1,0 +1,85 @@
+
+<programa> ::= <circ_def> <output_def>
+
+
+<circ_def> ::= CIRCDEF 
+		<circ_name>
+[gnd, 
+<circ_nodes>;<circ_components>;]{<circ_def>}
+
+
+<circ_name> ::= <var_name>
+
+
+<circ_nodes> ::= <var_name> {, <circ_nodes>}
+
+
+<circ_components> ::= <resistor> | <capacitor> | <inductor> | <voltage_source> | <current_source>
+
+
+<resistor> ::= (RST, <var_name>, <node_name>, <node_name>, <number_frac>) {, <circ_components>}
+
+
+<capacitor> ::= (CPT, <var_name>, <node_name>, <node_name>, <number_frac>, <ini_condition>) {, <circ_components>}
+
+
+<inductor> ::= (IDT, <var_name>, <node_name>, <node_name>, <number_frac>, <ini_condition>) {, <circ_components>}
+
+
+<voltage_source> ::= (VSR, <var_name>, <node_name>, <node_name>, <vstype>) {, <circ_components>}
+
+
+<current_source> ::= (CSR, <var_name>, <node_name>, <node_name>, <cstype>) {, <circ_components>}
+
+
+<node_name> ::= <var_name>
+
+
+<ini_conditions> ::= <number_frac>
+
+
+<vstype> ::= CNT, <amplitude>, 0 | SIN, <amplitude>, <frequencia>
+<cstype> ::= CNT, <amplitude>, 0 | SIN, <amplitude>, <frequencia>
+<amplitude> ::= <number_frac>
+<frequencia> ::= <number_frac>
+
+<output_def> ::= OUTDEF [<out_line>]
+<out_line> ::= <out_type>{<out_line>} | <conditional>{<out_line>} | <iteration>{<out_line>} | <atribu>;{<out_line>}
+<out_type> ::= <inout_list>; {<out_type>} | <inout_graphic>; {<out_type>}
+<inout_list> ::= LIST(<output>, <interval>, <start_time>, <end_time>)
+<inout_graphic> ::= PLOT(<file_name>, <output>, <interval>, <start_time>, <end_time>)
+<interval> ::= <number_frac>
+<start_time> ::= <number_frac>
+<end_time> ::= <number_frac>
+<output> ::= <expr>
+<expr> ::= (<expr> + <expr>) | (<expr> - <expr>) | (<expr> * <expr>) | (<expr> / <expr>) | (<var_name>.<var_name> & <var_name>.<var_name>) | (_<var_name>.<var_name>) | (#<var_name>.<var_name>) | <number_frac>
+<file_name> ::= <string>
+<string> ::= "<number> {<caracter> | <number_name>}" | "<caracter> {<caracter> | <number_name>}"
+<conditional> ::= IF(<log_expr>)[<out_line>]
+<iteration> ::= DO(<ini_number>)[<out_line>] | WHILE(<log_expr>)[<out_line>]
+<log_expr> ::= (<log_expr> OR <log_expr>) | (<log_expr> AND <log_expr>) | (<expr> == <expr>) | (<expr> =! <expr>) | (<expr> =< <expr>) | (<expr> => <expr>) | (<expr> < <expr>) | (<expr> > <expr>)
+<atribu> ::= <var_name>
+
+.<var_name>.<svar_name>
+
+ := <ini_number>.<number> | <var_name>
+
+.<var_name>.<svar_name>
+
+ := "<scaracter>"
+<svar_name> ::= CTYPE | OTYPE | NNAMEA | NNAMEB | AMPLITUDE | IVALUE | FREQUENCY
+
+<number_frac> ::= <ini_number>.<number>
+
+
+<var_name> ::= <caracter>
+
+
+<ini_number> ::= 0 | 1 .. 9 {<number>}
+
+
+<number> ::= 0 .. 9 {<number>}
+
+
+<caracter> ::= a .. z {<caracter>}
+<scaracter> ::= A .. Z {<scaracter>}

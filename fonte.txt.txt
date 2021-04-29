@@ -1,0 +1,28 @@
+CIRCDEF
+
+$ CIRCUITO SIMPLES $
+circuitoa
+[
+	gnd, a;
+	(VSR, vsra, gnd, a, CNT, 12.20, 0), (RST, rsta, gnd, a, 1000.00), (RST, rstb, gnd, a, 500.00);
+]
+
+$ CIRCUITO RC $
+circuitob
+[
+	gnd, a, b;
+	(VSR, vsra, gnd, a, SIN, 110.00, 60.00), (RST, rsta, a, b, 420.00), (CPT, cpta, b, gnd, 0.0001, 0.00);
+]
+
+$ CIRCUITO RLC $
+circuitoc
+[
+	gnd, a, b, c;
+	(VSR, vsra, gnd, a, SIN, 220.00, 30.00), (RST, rsta, a, b, 420.00), (CPT, cpta, b, c, 0.0001, 0.00), (IDT, idta, c, gnd, 1.50, 10.00);
+]
+
+OUTDEF
+[
+	circuitoa.vsra.AMPLITUDE := 10.50;
+	PLOT("Saida.img", ((circuitoa.a & circuitoa.gnd) / ((_circuitoa.rsta) + (_circuitoa.rstb))), 0.01, 0.00, 10.00);
+]

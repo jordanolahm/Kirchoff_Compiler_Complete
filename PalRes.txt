@@ -1,0 +1,90 @@
+	CIRCDEF	<CIRCDEF, >
+ICRCDEF CRICDEF CICRDEF CIRDCEF CIRCEDF CIRCDFE
+	gnd	<sid, >
+ngd gdn
+	RST	<RST, >
+SRT RTS
+	CPT	<CPT, >
+PCT CTP
+	IDT	<IDT, >
+DIT ITD
+	VSR	<VSR, >
+SVR VRS
+	CSR	<CSR, >
+SCR CRS
+	CNT	<CNT, >
+NCT CTN
+	SIN	<SIN, >
+ISN SNI
+	OUTDEF	<OUTDEF, >
+UOTDEF OTUDEF OUDTEF OUTEDF OUTDFE
+	LIST	<LIST, >
+ILST LSIT LITS
+	PLOT	<PLOT, >
+LPOT POLT PLTO
+	IF	<IF, >
+FI
+	DO	<DO, >
+OD
+	WHILE	<WHILE, >
+HWILE WIHLE WHLIE WHIEL
+	:=	<:=, >
+	AND	<AND, >
+NAD ADN
+	OR	<OR, >
+RO
+	+	<+, >
+
+	-	<-, >
+
+	*	<*, >
+
+	/	</, >
+
+	&	<&, >
+
+	_	<_, >
+
+	#	<#, >
+
+	==	<==, >
+
+	=!	<=!, >
+
+	=<	<<=, >
+
+	=>	<>=, >
+
+	<	<<, >
+
+	>	<>, >
+
+	[	<[, >
+
+	]	<], >
+
+	,	<,, >
+
+	.	<., >
+
+	(	<(, >
+
+	)	<), >
+
+	"	<", >
+
+	;	<;, >
+
+	CTYPE
+
+	OTYPE
+
+	NNAMEA
+
+	NNAMEB
+
+	AMPLITUDE
+
+	IVALUE
+
+	FREQUENCY

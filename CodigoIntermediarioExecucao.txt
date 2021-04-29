@@ -1,0 +1,11 @@
+[
+	PLOT("saida.png", (circuitoa.a & circuitoa.b), 0.01, 0.00, 10.00);
+	IF((((circuitoa.a & circuitoa.b) + (_circuitoa.rsta)) > (#circuitoa.rsta)))
+	[
+		LIST("saida.txt", (circuitoa.a & circuitoa.b), 0.01, 0.00, 10.00);
+	]
+	circuitob.idta.AMPLITUDE := 0.01;
+
+	circuitoa.rstx.CTYPE := CPT;
+	circuitoa.rstb.NNAMEB := "b";
+]

@@ -1,0 +1,31 @@
+#circuitoa
+<gnd
+<a
+<b
+<c
+>rsta	RST	a	b	NONE	1000	0	0	
+>rstb	RST	b	c	NONE	2000	0	0	
+>rstc	RST	c	gnd	NONE	100	0	0	
+>csra	CSR	gnd	a	SIN	10	0	0	
+>rstd	RST	a	b	NONE	1000	0	0	
+@
+				+ 0				+ (0 / (0 + (s * s)))				+ 0				+ 0
+				+ 0				+ 0				+ (1000 * (V1,2)) + (1000 * (V1,2)) 				+ 0
+				+ 0				+ 0				+ 0				+ (2000 * (V2,3)) 
+				+ (100 * (V3,0)) 				+ 0				+ 0				+ 0
+
+#circuitob
+<gnd
+<a
+<b
+<c
+>cpta	CPT	a	b	NONE	0.0001	0	0	
+>idta	IDT	b	c	NONE	0.1	0	0	
+>rsta	RST	c	gnd	NONE	500	0	0	
+>vsra	VSR	gnd	a	SIN	110	60.5	0	
+@
+				+ 0				+ VOLTAGE(60.5 / (3660.25 + (s * s)))				+ 0				+ 0
+				+ 0				+ 0				+ ((0) + (0.0001 + (s * (V1,2)))) 				+ 0
+				+ 0				+ 0				+ 0				+ ((0 / s) + ((V2,3) / (0.1 * s)))
+				+ (500 * (V3,0)) 				+ 0				+ 0				+ 0
+
